@@ -8,8 +8,15 @@ namespace Honduras_Shopping.BL
 {
     public class Producto
     {
+        public Producto()
+        {
+            Activo = true;
+        }
+
         public int Id { get; set; }
         public string Descripcion { get; set; }
         public double Precio { get; set; }
+        public Categoria categoria { get; set; }
+        public bool Activo { get; set; }
     }
 }
