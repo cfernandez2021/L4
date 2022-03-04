@@ -9,7 +9,6 @@ namespace Honduras_Shopping.BL
     public class CategoriasBL
     {
         Contexto _contexto;
-
         public List<Categoria> ListadeCategorias { get; set; }
 
         public CategoriasBL()
@@ -18,14 +17,10 @@ namespace Honduras_Shopping.BL
             ListadeCategorias = new List<Categoria>();
         }
 
-
-       public  List<Categoria> ObtenerCategorias()
+        public List<Categoria> ObtenerCategorias()
         {
-
-
             ListadeCategorias = _contexto.Categorias.ToList();
-
-            return ListadeCategorias; 
+            return ListadeCategorias;
         }
 
         public void GuardarCategoria(Categoria categoria)
@@ -38,22 +33,22 @@ namespace Honduras_Shopping.BL
             {
                 var categoriaExistente = _contexto.Categorias.Find(categoria.Id);
                 categoriaExistente.Descripcion = categoria.Descripcion;
-               
             }
-                
+
             _contexto.SaveChanges();
         }
 
-        public Categoria ObtenerCategoria(int Id)
+        public Categoria ObtenerCategoria(int id)
         {
-            var categoria = _contexto.Categorias.Find(Id);
+            var categoria = _contexto.Categorias.Find(id);
 
             return categoria;
         }
 
-        public void EliminarCategoria(int Id)
+        public void EliminarCategoria(int id)
         {
-            var categoria = _contexto.Categorias.Find(Id);
+            var categoria = _contexto.Categorias.Find(id);
+
             _contexto.Categorias.Remove(categoria);
             _contexto.SaveChanges();
         }

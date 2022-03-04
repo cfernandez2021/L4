@@ -53,9 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Producto.cs" />
-    <Compile Include="CategoriasBL.cs" />
     <Compile Include="ProductosBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

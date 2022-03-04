@@ -10,8 +10,8 @@ namespace Honduras_Shopping.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base(@"Data source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Honduras_ShoppingDB.mdf")
+        public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename="+
+            Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ @"\Honduras_ShoppingDB.mdf")
         {
 
         }
