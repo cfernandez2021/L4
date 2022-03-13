@@ -16,7 +16,7 @@ namespace Honduras_Shopping.BL
         public int Id { get; set; }
         [Required(ErrorMessage = "ingrese la descripcion")]
         [MinLength(3, ErrorMessage = "ingrese minimo 3 caracteres")]
-        [MaxLength(20, ErrorMessage = "ingrese minimo 20 caracteres")]
+        [MaxLength(60, ErrorMessage = "ingrese minimo 60 caracteres")]
         public string Descripcion { get; set; }
         [Required(ErrorMessage = "ingrese el precio")]
         [Range(0, 1000, ErrorMessage = "ingrese un precio entre 0 y 1000")]
