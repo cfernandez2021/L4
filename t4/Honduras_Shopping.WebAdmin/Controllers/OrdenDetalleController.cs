@@ -43,7 +43,7 @@ namespace Honduras_Shopping.WebAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(ordenDetalle.ProductoId==0)
+                if (ordenDetalle.ProductoId == 0)
                 {
                     ModelState.AddModelError("ProductoId", "Seleccione un Producto");
                     return View(ordenDetalle);
@@ -54,9 +54,23 @@ namespace Honduras_Shopping.WebAdmin.Controllers
             var productos = _productosBL.ObtenerProductos();
             ViewBag.ProductoId = new SelectList(productos, "Id", "Descripcion");
             return View(ordenDetalle);
-
-
         }
+
+
+        public ActionResult Eliminar(int Id)
+        {
+            var ordenDetalle = _ordenBL.ObtenerOrdenDetallePorId(Id);
+            return View(ordenDetalle);
+        }
+
+        [HttpPost]
+        public ActionResult Eliminar(OrdenDetalle ordenDetalle)
+        {
+            _ordenBL.EliminarOrdenDetalle(ordenDetalle.Id);
+
+            return RedirectToAction("Index", new { id = ordenDetalle.OrdenId });
+       }
+    
 
 
     }
